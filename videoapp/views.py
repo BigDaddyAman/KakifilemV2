@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import JsonResponse
 
 def index(request):
     # Pass any URL parameters to the template
@@ -13,9 +12,3 @@ def countdown(request):
         'video_name': video_name
     }
     return render(request, 'countdown.html', context)
-
-def health_check(request):
-    """
-    Simple health check endpoint for Railway
-    """
-    return JsonResponse({'status': 'healthy'}, status=200)
